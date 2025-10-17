@@ -1,7 +1,5 @@
 {
-  "cSpell.words": [
-    "exercism"
-  ],
+  "cSpell.words": ["exercism"],
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true

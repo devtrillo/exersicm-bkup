@@ -1,1 +1,9 @@
-{"track":"typescript","exercise":"hello-world","id":"1078652cc5534799908ba2b09d15f9cf","url":"https://exercism.org/tracks/typescript/exercises/hello-world","handle":"etrillo","is_requester":true,"auto_approve":false}
+{
+  "track": "typescript",
+  "exercise": "hello-world",
+  "id": "1078652cc5534799908ba2b09d15f9cf",
+  "url": "https://exercism.org/tracks/typescript/exercises/hello-world",
+  "handle": "etrillo",
+  "is_requester": true,
+  "auto_approve": false
+}
