@@ -21,7 +21,23 @@ describe('Solve the alphametics puzzle', () => {
     const puzzle = 'ACA + DD == BD'
     expect(solve(puzzle)).toBeUndefined()
   })
+it('passes with a longest chain',()=>{
+const puzzle = "SO + MANY + MORE + MEN + SEEM + TO + SAY + THAT + THEY + MAY + SOON + TRY + TO + STAY + AT + HOME + SO + AS + TO + SEE + OR + HEAR + THE + SAME + ONE + MAN + TRY + TO + MEET + THE + TEAM + ON + THE + MOON + AS + HE + HAS + AT + THE + OTHER + TEN == TESTS"
 
+const expected =    {
+  "M": 2,
+      "A": 7,
+      "N": 6,
+      "E": 0,
+      "H": 5,
+      "O": 1,
+      "R": 8,
+      "S": 3,
+      "T": 9,
+      "Y": 4,
+    }
+expect(solve(puzzle)).toEqual(expected)
+})
   it('puzzle with four letters', () => {
     const puzzle = 'AS + A == MOM'
     const expected = {
