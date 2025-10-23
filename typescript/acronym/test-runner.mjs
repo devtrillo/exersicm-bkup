@@ -24,86 +24,86 @@
  *    instructions if you see errors about corepack or pnp.
  */
 
-import { execSync } from 'node:child_process'
-import { existsSync, readFileSync } from 'node:fs'
-import { exit } from 'node:process'
-import { URL } from 'node:url'
+import { execSync } from "node:child_process";
+import { existsSync, readFileSync } from "node:fs";
+import { exit } from "node:process";
+import { URL } from "node:url";
 
 /**
  * Before executing any tests, the test runner attempts to find the
  * exercise config.json file which has metadata about which types of tests
  * to run for this solution.
  */
-const metaDirectory = new URL('./.meta/', import.meta.url)
-const exercismDirectory = new URL('./.exercism/', import.meta.url)
+const metaDirectory = new URL("./.meta/", import.meta.url);
+const exercismDirectory = new URL("./.exercism/", import.meta.url);
 const configDirectory = existsSync(metaDirectory)
-  ? metaDirectory
-  : existsSync(exercismDirectory)
-    ? exercismDirectory
-    : null
+	? metaDirectory
+	: existsSync(exercismDirectory)
+		? exercismDirectory
+		: null;
 
 if (configDirectory === null) {
-  throw new Error(
-    'Expected .meta or .exercism directory to exist, but I cannot find it.'
-  )
+	throw new Error(
+		"Expected .meta or .exercism directory to exist, but I cannot find it.",
+	);
 }
 
-const configFile = new URL('./config.json', configDirectory)
+const configFile = new URL("./config.json", configDirectory);
 if (!existsSync(configFile)) {
-  throw new Error('Expected config.json to exist at ' + configFile.toString())
+	throw new Error("Expected config.json to exist at " + configFile.toString());
 }
 
 // Experimental: import config from './config.json' with { type: 'json' }
 /** @type {import('./config.json') } */
-const config = JSON.parse(readFileSync(configFile))
+const config = JSON.parse(readFileSync(configFile));
 
-const jest = !config.custom || config.custom['flag.tests.jest']
-const tstyche = config.custom?.['flag.tests.tstyche']
+const jest = !config.custom || config.custom["flag.tests.jest"];
+const tstyche = config.custom?.["flag.tests.tstyche"];
 console.log(
-  `[tests] tsc: ✅, tstyche: ${tstyche ? '✅' : '❌'}, jest: ${jest ? '✅' : '❌'}, `
-)
+	`[tests] tsc: ✅, tstyche: ${tstyche ? "✅" : "❌"}, jest: ${jest ? "✅" : "❌"}, `,
+);
 
 /**
  * 1. tsc: the typescript compiler
  */
 try {
-  console.log('[tests] tsc (compile)')
-  execSync('corepack yarn lint:types', {
-    stdio: 'inherit',
-    cwd: process.cwd(),
-  })
+	console.log("[tests] tsc (compile)");
+	execSync("corepack yarn lint:types", {
+		stdio: "inherit",
+		cwd: process.cwd(),
+	});
 } catch {
-  exit(-1)
+	exit(-1);
 }
 
 /**
  * 2. tstyche: type tests
  */
 if (tstyche) {
-  try {
-    console.log('[tests] tstyche (type tests)')
-    execSync('corepack yarn test:types', {
-      stdio: 'inherit',
-      cwd: process.cwd(),
-    })
-  } catch {
-    exit(-2)
-  }
+	try {
+		console.log("[tests] tstyche (type tests)");
+		execSync("corepack yarn test:types", {
+			stdio: "inherit",
+			cwd: process.cwd(),
+		});
+	} catch {
+		exit(-2);
+	}
 }
 
 /**
  * 3. jest: implementation tests
  */
 if (jest) {
-  try {
-    console.log('[tests] tstyche (implementation tests)')
-    execSync('corepack yarn test:implementation', {
-      stdio: 'inherit',
-      cwd: process.cwd(),
-    })
-  } catch {
-    exit(-3)
-  }
+	try {
+		console.log("[tests] tstyche (implementation tests)");
+		execSync("corepack yarn test:implementation", {
+			stdio: "inherit",
+			cwd: process.cwd(),
+		});
+	} catch {
+		exit(-3);
+	}
 }
 
 /**

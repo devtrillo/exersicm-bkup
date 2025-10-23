@@ -1,9 +1,9 @@
 {
-  "track": "typescript",
-  "exercise": "dnd-character",
-  "id": "00314d905c0e4d008dd7dae6347050ec",
-  "url": "https://exercism.org/tracks/typescript/exercises/dnd-character",
-  "handle": "etrillo",
-  "is_requester": true,
-  "auto_approve": false
+	"track": "typescript",
+	"exercise": "dnd-character",
+	"id": "00314d905c0e4d008dd7dae6347050ec",
+	"url": "https://exercism.org/tracks/typescript/exercises/dnd-character",
+	"handle": "etrillo",
+	"is_requester": true,
+	"auto_approve": false
 }

@@ -1,0 +1,7 @@
+{
+	"name": "Exercism",
+	"packageManager": "yarn@4.6.0",
+	"devDependencies": {
+		"prettier": "3.6.2"
+	}
+}

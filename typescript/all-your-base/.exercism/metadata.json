@@ -1,1 +1,9 @@
-{"track":"typescript","exercise":"all-your-base","id":"e159e6109ca843e58f541b58a402dd78","url":"https://exercism.org/tracks/typescript/exercises/all-your-base","handle":"etrillo","is_requester":true,"auto_approve":false}
+{
+	"track": "typescript",
+	"exercise": "all-your-base",
+	"id": "e159e6109ca843e58f541b58a402dd78",
+	"url": "https://exercism.org/tracks/typescript/exercises/all-your-base",
+	"handle": "etrillo",
+	"is_requester": true,
+	"auto_approve": false
+}

@@ -1,9 +1,9 @@
 {
-  "track": "typescript",
-  "exercise": "palindrome-products",
-  "id": "14e1f32237ae4329b4276362d32e7e67",
-  "url": "https://exercism.org/tracks/typescript/exercises/palindrome-products",
-  "handle": "etrillo",
-  "is_requester": true,
-  "auto_approve": false
+	"track": "typescript",
+	"exercise": "palindrome-products",
+	"id": "14e1f32237ae4329b4276362d32e7e67",
+	"url": "https://exercism.org/tracks/typescript/exercises/palindrome-products",
+	"handle": "etrillo",
+	"is_requester": true,
+	"auto_approve": false
 }
