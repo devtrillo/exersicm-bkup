@@ -8,8 +8,8 @@ of a module and its functions and/or classes.
 """
 
 
-EXPECTED_BAKE_TIME = 40
-PREPARATION_TIME = 2
+EXPECTED_BAKE_TIME = 40  # in minutes
+PREPARATION_TIME = 2  # in minutes per layer
 
 
 def bake_time_remaining(elapsed_bake_time):
