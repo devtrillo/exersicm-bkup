@@ -74,9 +74,8 @@ def is_blackjack(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-    return (
-        (card_one == "A" and value_of_card(card_two) == 10)
-        or (card_two == "A" and value_of_card(card_one) == 10)
+    return (card_one == "A" and value_of_card(card_two) == 10) or (
+        card_two == "A" and value_of_card(card_one) == 10
     )
 
 
